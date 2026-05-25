@@ -44,12 +44,13 @@ router.post(
         data: newCertificate,
       });
     } catch (error) {
-      console.log(error);
+  console.log("FULL ERROR:");
+  console.log(error);
 
-      res.status(500).json({
-        message: "Server Error",
-      });
-    }
+  res.status(500).json({
+    message: error.message,
+  });
+}
   }
 );
 
